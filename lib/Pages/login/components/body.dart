@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sign_up/Pages/login/components/background.dart';
+import 'package:sign_up/Pages/signup/sign_up.dart';
 import 'package:sign_up/components/already_have_an_account_check.dart';
 import 'package:sign_up/components/rounded_button.dart';
 import 'package:sign_up/components/rounded_input_text.dart';
@@ -16,8 +17,13 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Background(
-      child: SingleChildScrollView(
+    goSignUpPage() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const SignUpPage()));
+    }
+
+    return SingleChildScrollView(
+      child: Background(
         child: SizedBox(
           height: size.height,
           width: double.infinity,
@@ -26,14 +32,14 @@ class Body extends StatelessWidget {
               'LOGIN',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Lottie.asset('assets/animations/signup.json',
+            Lottie.asset('assets/animations/login.json',
                 width: size.height * 0.4),
             RoundedInputText(
               hinText: 'Your Email',
               icon: Icons.person,
               onChanged: (value) {},
             ),
-            RoundPasswordFiel(
+            RoundedPasswordFiel(
               onChanged: (value) {},
             ),
             RoundedButton(
@@ -45,7 +51,9 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
               login: true,
-              press: () {},
+              press: () {
+                goSignUpPage();
+              },
             ),
           ]),
         ),

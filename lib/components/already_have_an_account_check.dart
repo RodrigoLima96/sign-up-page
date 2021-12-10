@@ -22,9 +22,11 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         ),
         const Padding(padding: EdgeInsets.only(left: 4)),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            press();
+          },
           child: Text(
-            login ? 'Sign UP' : 'Sign In',
+            login ? 'Sign Up' : 'Sign In',
             style: const TextStyle(
               color: kPrimaryColor,
               fontWeight: FontWeight.bold,

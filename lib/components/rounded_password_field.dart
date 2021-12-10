@@ -3,9 +3,9 @@ import 'package:sign_up/components/text_field_container.dart';
 
 import '../constants.dart';
 
-class RoundPasswordFiel extends StatelessWidget {
+class RoundedPasswordFiel extends StatelessWidget {
   final ValueChanged<String> onChanged;
-  const RoundPasswordFiel({
+  const RoundedPasswordFiel({
     Key? key,
     required this.onChanged,
   }) : super(key: key);
@@ -27,7 +27,7 @@ class RoundPasswordFiel extends StatelessWidget {
             Icons.lock,
             color: kPrimaryColor,
           ),
-          suffixIcon: Icon(Icons.visibility, color: kPrimaryColor),
+          suffixIcon: const Icon(Icons.visibility, color: kPrimaryColor),
           hintText: 'Password',
         ),
       ),
