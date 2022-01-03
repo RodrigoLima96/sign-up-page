@@ -25,6 +25,7 @@ class Body extends StatelessWidget {
     }
 
     return SingleChildScrollView(
+      reverse: true,
       child: Background(
         child: SizedBox(
           height: size.height,
